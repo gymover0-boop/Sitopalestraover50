@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PalestraOver50 | Coaching Online per Over 45</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#f59e0b', // Amber per richiamare energia/forza
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for background overlays */
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?q=80&w=1616&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="dumbbell" class="h-8 w-8 text-brand-600 mr-2"></i>
+                    <span class="font-bold text-2xl tracking-tight text-slate-900">Palestra<span class="text-brand-600">Over50</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#benefici" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Perché Iniziare</a>
+                    <a href="#servizi" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Servizi</a>
+                    <a href="#chisono" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Chi Sono</a>
+                    <a href="#testimonianze" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Recensioni</a>
+                    <a href="#contatti" class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Inizia Ora
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#benefici" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 mobile-link">Perché Iniziare</a>
+                <a href="#servizi" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 mobile-link">Servizi</a>
+                <a href="#chisono" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 mobile-link">Chi Sono</a>
+                <a href="#testimonianze" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50 mobile-link">Recensioni</a>
+                <a href="#contatti" class="block px-3 py-3 mt-4 text-center rounded-md text-base font-bold bg-brand-600 text-white hover:bg-brand-700 mobile-link">Inizia Ora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center md:text-left">
+            <div class="max-w-3xl">
+                <span class="inline-block py-1 px-3 rounded-full bg-accent-500/20 text-accent-500 font-semibold text-sm mb-4 border border-accent-500/30 backdrop-blur-sm">
+                    Coaching Online Esclusivo per Over 45
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                    La Tua Migliore Forma Fisica <br class="hidden md:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-accent-500">Inizia a 50 Anni.</span>
+                </h1>
+                <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                    Smetti di sentirti stanco o bloccato dai dolori. Aumenta la tua forza, migliora la mobilità e ritrova l'energia che meriti con un programma di allenamento pensato specificamente per il tuo corpo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contatti" class="bg-brand-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-700 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] text-center">
+                        Richiedi Consulenza Gratuita
+                    </a>
+                    <a href="#servizi" class="bg-white/10 text-white border border-white/20 backdrop-blur-sm px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center">
+                        Scopri i Programmi
+                    </a>
+                </div>
+                
+                <div class="mt-10 flex items-center justify-center md:justify-start space-x-4 text-slate-300">
+                    <div class="flex -space-x-2">
+                        <img class="w-10 h-10 rounded-full border-2 border-slate-800" src="https://i.pravatar.cc/100?img=11" alt="Cliente" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2RkZCIvPjwvc3ZnPg=='">
+                        <img class="w-10 h-10 rounded-full border-2 border-slate-800" src="https://i.pravatar.cc/100?img=33" alt="Cliente" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2RkZCIvPjwvc3ZnPg=='">
+                        <img class="w-10 h-10 rounded-full border-2 border-slate-800" src="https://i.pravatar.cc/100?img=68" alt="Cliente" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2RkZCIvPjwvc3ZnPg=='">
+                    </div>
+                    <p class="text-sm">Unisciti a oltre <span class="font-bold text-white">100+ atleti</span> over 45</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Wave Decorator -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,121.32,201.5,114.5,242.44,110.59,283.43,98.84,321.39,56.44Z" class="fill-slate-50"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Perché Iniziare (Benefici) -->
+    <section id="benefici" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Il corpo cambia, l'allenamento deve adattarsi</h2>
+                <p class="text-lg text-slate-600">Dopo i 45 anni, le schede "copia-incolla" non funzionano più. Hai bisogno di un approccio intelligente che protegga le articolazioni e massimizzi i risultati.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Beneficio 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-brand-100 rounded-xl flex items-center justify-center mb-6 text-brand-600">
+                        <i data-lucide="shield-check" class="h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Longevità e Sicurezza</h3>
+                    <p class="text-slate-600 leading-relaxed">Allenamenti strutturati per rinforzare muscoli e tendini senza sovraccaricare le articolazioni. Previeni gli infortuni e muoviti senza dolore.</p>
+                </div>
+
+                <!-- Beneficio 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-accent-50 rounded-xl flex items-center justify-center mb-6 text-accent-600">
+                        <i data-lucide="activity" class="h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Re-Boost del Metabolismo</h3>
+                    <p class="text-slate-600 leading-relaxed">Contrasta la perdita di massa magra (sarcopenia) e risveglia il tuo metabolismo dormiente con il giusto stimolo allenante.</p>
+                </div>
+
+                <!-- Beneficio 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 text-green-600">
+                        <i data-lucide="zap" class="h-8 w-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Aumento della Forza Vera</h3>
+                    <p class="text-slate-600 leading-relaxed">Non si tratta solo di estetica, ma di forza funzionale per affrontare la vita quotidiana, i tuoi hobby e gli sport con rinnovato vigore.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi / Piani -->
+    <section id="servizi" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold uppercase tracking-wider text-sm">I Miei Percorsi</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">Scegli il Programma Più Adatto a Te</h2>
+                <p class="text-lg text-slate-600">Che tu voglia solo mantenerti in forma da casa o spingere forte in palestra, c'è un percorso su misura per te.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Card 1 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Salute & Mobilità</h3>
+                    <p class="text-slate-500 mb-6">Per chi vuole iniziare gradualmente, eliminare i dolori e ritrovare flessibilità.</p>
+                    <div class="mb-6">
+                        <span class="text-lg font-bold text-slate-900">Contattami in privato per i dettagli.</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">Programma per casa o palestra</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">Video esecuzione esercizi</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">Check-in via email ogni 15 giorni</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">Focus su articolazioni e stretching</span></li>
+                    </ul>
+                    <a href="#contatti" class="w-full block text-center bg-white text-brand-600 font-bold py-3 px-4 rounded-xl border-2 border-brand-100 hover:border-brand-500 hover:bg-brand-50 transition-colors">
+                        Richiedi Info
+                    </a>
+                </div>
+
+                <!-- Card 2 (Evidenziata) -->
+                <div class="bg-brand-900 rounded-3xl p-8 border border-brand-800 flex flex-col relative transform md:-translate-y-4 shadow-2xl">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-accent-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full">Il Più Scelto</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Forza & Ipertrofia 50+</h3>
+                    <p class="text-brand-200 mb-6">Costruisci muscoli veri, aumenta la forza e trasforma la tua composizione corporea.</p>
+                    <div class="mb-6">
+                        <span class="text-lg font-bold text-white">Contattami in privato per i dettagli.</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-accent-500 mr-2 flex-shrink-0"></i><span class="text-slate-100">Scheda personalizzata mensile</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-accent-500 mr-2 flex-shrink-0"></i><span class="text-slate-100">Consigli nutrizionali di base</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-accent-500 mr-2 flex-shrink-0"></i><span class="text-slate-100">Check-in settimanale WhatsApp</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-accent-500 mr-2 flex-shrink-0"></i><span class="text-slate-100">Analisi video delle esecuzioni</span></li>
+                    </ul>
+                    <a href="#contatti" class="w-full block text-center bg-brand-500 text-white font-bold py-3 px-4 rounded-xl hover:bg-brand-400 transition-colors shadow-lg">
+                        Richiedi Info
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Coaching Premium 1-to-1</h3>
+                    <p class="text-slate-500 mb-6">Il massimo supporto. Ti guido passo dopo passo in ogni singolo aspetto del percorso.</p>
+                    <div class="mb-6">
+                        <span class="text-lg font-bold text-slate-900">Contattami in privato per i dettagli.</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">Tutto ciò che c'è nel piano Forza</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">1 Videochiamata strategica/mese</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">Aggiustamenti live del programma</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle-2" class="h-6 w-6 text-brand-500 mr-2 flex-shrink-0"></i><span class="text-slate-700">Supporto prioritario 24/7</span></li>
+                    </ul>
+                    <a href="#contatti" class="w-full block text-center bg-white text-slate-800 font-bold py-3 px-4 rounded-xl border-2 border-slate-300 hover:border-slate-800 hover:bg-slate-50 transition-colors">
+                        Richiedi Info
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Sono -->
+    <section id="chisono" class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Immagine Coach -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-brand-500 rounded-3xl transform rotate-3 scale-105 opacity-20"></div>
+                    <img src="photo_2026-05-05_22-28-34_2.jpg" 
+                         alt="Coach" 
+                         class="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full"
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzMzMyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmaWxsPSIjZmZmIiBkeT0iLjNlbSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1tYWdpbmUgQ29hY2g8L3RleHQ+PC9zdmc+'">
+                    
+                    <!-- Badge Badge Esperienza -->
+                    <div class="absolute -bottom-6 -right-6 bg-accent-500 text-slate-900 p-6 rounded-2xl shadow-xl font-bold">
+                        <span class="block text-4xl mb-1">10+</span>
+                        <span class="block text-sm uppercase tracking-wide">Anni di<br>Esperienza</span>
+                    </div>
+                </div>
+
+                <!-- Testo Chi Sono -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ciao, sono Karim. Il tuo nuovo Coach.</h2>
+                    <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                        A 40 anni ho subito un grave infortunio alla schiena. Mi dissero che non avrei più potuto sollevare pesi. È lì che ho iniziato a studiare biomeccanica e metodologie di allenamento specifiche per l'età adulta.
+                    </p>
+                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                        Oggi, a 52 anni, sono più forte e in forma di quando ne avevo 30. E la mia missione è aiutare uomini e donne a capire che <strong class="text-white">la genetica non è una condanna e l'età è solo un parametro</strong>. Con il giusto allenamento, puoi ricostruire il tuo fisico da zero.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <div class="bg-brand-500/20 p-2 rounded-lg mr-4"><i data-lucide="award" class="h-6 w-6 text-brand-400"></i></div>
+                            <span class="text-slate-200">Certificazione Personal Trainer ISSA</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="bg-brand-500/20 p-2 rounded-lg mr-4"><i data-lucide="book-open" class="h-6 w-6 text-brand-400"></i></div>
+                            <span class="text-slate-200">Specializzazione in Fisiologia dell'Invecchiamento</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="bg-brand-500/20 p-2 rounded-lg mr-4"><i data-lucide="users" class="h-6 w-6 text-brand-400"></i></div>
+                            <span class="text-slate-200">Centinaia di atleti over 45 allenati con successo</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonianze -->
+    <section id="testimonianze" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Storie di Successo</h2>
+                <p class="text-lg text-slate-600">Ascolta chi ha già deciso di investire sulla propria salute e forza dopo i 45 anni.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex text-accent-500 mb-4">
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">"A 55 anni pensavo che i dolori alle ginocchia fossero normali. Con il programma 'Salute & Mobilità' non solo sono spariti, ma ho ripreso a giocare a tennis con i miei figli."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500 mr-4">R</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Roberto T.</h4>
+                            <span class="text-sm text-slate-500">55 Anni</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex text-accent-500 mb-4">
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">"Mai sollevato un peso in vita mia. Karim mi ha seguita passo passo spiegandomi tutto con video chiari. Ora faccio stacchi da terra e mi sento una roccia."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-600 mr-4">L</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Laura B.</h4>
+                            <span class="text-sm text-slate-500">48 Anni</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex text-accent-500 mb-4">
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                    </div>
+                    <p class="text-slate-700 mb-6 italic">"Ero bloccato in stallo da anni in palestra. Il piano Forza Over 50 ha stravolto i miei allenamenti. In 4 mesi ho aumentato i massimali e messo su 3kg di muscoli puliti."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center font-bold text-white mr-4">G</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Giorgio M.</h4>
+                            <span class="text-sm text-slate-500">51 Anni</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contatti -->
+    <section id="contatti" class="py-24 bg-brand-600 relative overflow-hidden">
+        <!-- Decorazioni Background -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-500 rounded-full opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-700 rounded-full opacity-50 blur-3xl"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Info Sinistra -->
+                <div class="bg-slate-900 text-white p-10 md:w-2/5 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Pronto a Cambiare?</h3>
+                        <p class="text-slate-300 mb-8">Compila il modulo per prenotare una consulenza gratuita di 15 minuti. Capiremo insieme se i miei programmi fanno al caso tuo.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <i data-lucide="mail" class="h-6 w-6 text-brand-400 mr-4"></i>
+                                <span>Gymover0@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="clock" class="h-6 w-6 text-brand-400 mr-4"></i>
+                                <span>Rispondo entro 24 ore</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Destra -->
+                <div class="p-10 md:w-3/5 bg-white">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="nome" class="block text-sm font-medium text-slate-700 mb-1">Nome e Cognome</label>
+                            <input type="text" id="nome" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow" placeholder="Mario Rossi">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow" placeholder="mario@email.com">
+                        </div>
+
+                        <div>
+                            <label for="obiettivo" class="block text-sm font-medium text-slate-700 mb-1">Qual è il tuo obiettivo principale?</label>
+                            <select id="obiettivo" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow bg-white">
+                                <option value="mantenimento">Migliorare salute e mobilità</option>
+                                <option value="forza">Aumentare massa muscolare e forza</option>
+                                <option value="dimagrimento">Perdere peso e tonificare</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="messaggio" class="block text-sm font-medium text-slate-700 mb-1">Breve messaggio (opzionale)</label>
+                            <textarea id="messaggio" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-shadow resize-none" placeholder="Raccontami brevemente la tua situazione attuale..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors flex justify-center items-center">
+                            <span>Invia Richiesta</span>
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <i data-lucide="dumbbell" class="h-6 w-6 text-brand-500 mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight text-white">Palestra<span class="text-brand-500">Over50</span></span>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="h-6 w-6"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="h-6 w-6"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="youtube" class="h-6 w-6"></i></a>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 PalestraOver50. Tutti i diritti riservati.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Termini e Condizioni</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Toast Message Box (Instead of Alert) -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 z-50 bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center pointer-events-none">
+        <i data-lucide="check-circle" class="h-6 w-6 text-green-400 mr-3"></i>
+        <span class="font-medium">Richiesta inviata con successo! Ti contatterò presto.</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form submission handling (Prevent default and show custom toast)
+        const form = document.getElementById('contactForm');
+        const toast = document.getElementById('toast');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Collect form data if needed (just for demonstration here)
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            // Loading state
+            btn.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Invio...';
+            btn.disabled = true;
+
+            // Simulate API call delay
+            setTimeout(() => {
+                // Reset form
+                form.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+
+                // Show toast
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                
+                // Hide toast after 4 seconds
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 4000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
